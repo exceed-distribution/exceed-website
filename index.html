@@ -346,11 +346,13 @@ footer{padding:48px 0;border-top:1px solid var(--line)}
   .hero p.lead{font-size:.95rem;margin-bottom:1.6rem}
   .hero-note{display:block;text-align:center;line-height:1.6}
   .cta-map{display:none}
-  .partners-row{flex-wrap:nowrap;justify-content:center;gap:16px;overflow:visible;padding:34px 0 42px}
+  .partners-row{flex-wrap:wrap;justify-content:center;gap:18px;overflow:hidden;padding:34px 0 42px}
   .plogo{flex:0 0 auto;width:80px;height:80px;box-shadow:0 0 0 1px rgba(20,20,30,.04), 0 8px 22px rgba(20,20,30,.10)}
   .foot-inner{flex-direction:column;text-align:center;gap:18px}
   .foot-left{flex-direction:column;gap:10px}
 }
+/* safety: never allow horizontal overflow (sideways scroll) */
+html,body{max-width:100%;overflow-x:hidden}
 </style>
 </head>
 <body>
