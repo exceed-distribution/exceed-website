@@ -118,10 +118,10 @@ header.nav.menu-open .menu-btn span:nth-child(3){transform:translateY(-5px) rota
 .video-frame iframe,.video-frame video,.video-frame #vslPlayer,.video-frame .vsl-yt{position:absolute;inset:0;width:100%;height:100%;border:0;display:block}
 .video-frame video{object-fit:cover}
 .video-frame .vsl-cover{position:absolute;inset:0;z-index:4;cursor:pointer;background:transparent}
-.video-frame .vsl-sound{position:absolute;z-index:5;right:14px;bottom:14px;display:inline-flex;align-items:center;gap:.45rem;font-family:var(--font-display);font-weight:600;font-size:.8rem;color:#fff;background:rgba(0,0,0,.55);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);border:1px solid rgba(255,255,255,.18);border-radius:8px;padding:.45rem .7rem;cursor:pointer;transition:background .2s ease}
+.video-frame .vsl-sound{position:absolute;z-index:5;right:14px;bottom:14px;display:inline-flex;align-items:center;justify-content:center;width:40px;height:40px;color:#fff;background:rgba(0,0,0,.55);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);border:1px solid rgba(255,255,255,.18);border-radius:10px;padding:0;cursor:pointer;transition:background .2s ease}
 .video-frame .vsl-sound:hover{background:rgba(0,0,0,.78)}
 .video-frame .vsl-sound .vsl-ic{display:flex}
-.video-frame .vsl-sound .vsl-ic svg{width:15px;height:15px;display:block}
+.video-frame .vsl-sound .vsl-ic svg{width:18px;height:18px;display:block}
 .video-placeholder{position:absolute;inset:0;display:grid;place-items:center;background:linear-gradient(135deg,#5a5960,#2f2e33);cursor:pointer}
 .play-btn{width:84px;height:84px;border-radius:50%;border:0;background:rgba(255,255,255,.94);color:#2E2D33;display:grid;place-items:center;cursor:pointer;padding-left:7px;transition:transform .2s ease,background .2s ease;box-shadow:0 10px 30px rgba(0,0,0,.35)}
 .play-btn:hover{transform:scale(1.08);background:#fff}
@@ -396,7 +396,7 @@ html,body{max-width:100%;overflow-x:hidden}
       </video>
       <div class="vsl-cover" id="vslCover" aria-hidden="true"></div>
       <button type="button" class="vsl-sound" id="vslSound" aria-pressed="false" aria-label="Enable sound">
-        <span class="vsl-ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><line x1="23" y1="9" x2="17" y2="15"></line><line x1="17" y1="9" x2="23" y2="15"></line></svg></span><span class="vsl-tx">Enable sound</span>
+        <span class="vsl-ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><line x1="23" y1="9" x2="17" y2="15"></line><line x1="17" y1="9" x2="23" y2="15"></line></svg></span>
       </button>
     </div>
 
@@ -1035,7 +1035,6 @@ html,body{max-width:100%;overflow-x:hidden}
   function setIcon(){
     if(!sndBtn)return;
     sndBtn.querySelector('.vsl-ic').innerHTML=SOUND_ON?SVG_ON:SVG_OFF;
-    sndBtn.querySelector('.vsl-tx').textContent=SOUND_ON?'Sound on':'Enable sound';
     sndBtn.setAttribute('aria-pressed',SOUND_ON?'true':'false');
     sndBtn.setAttribute('aria-label',SOUND_ON?'Mute video':'Enable sound');
   }
