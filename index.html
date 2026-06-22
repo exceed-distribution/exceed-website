@@ -115,7 +115,7 @@ header.nav.menu-open .menu-btn span:nth-child(3){transform:translateY(-5px) rota
 .hero-center{position:relative;z-index:2;max-width:1120px;margin:0 auto;text-align:center;display:flex;flex-direction:column;align-items:center}
 .video-cap{font-family:var(--font-display);font-weight:700;font-size:.95rem;color:var(--ink);background:#F1CE47;border:1px solid #F1CE47;padding:.55rem 1.25rem;border-radius:999px;margin-bottom:1.4rem;box-shadow:0 8px 22px rgba(241,206,71,.32)}
 .video-frame{position:relative;width:100%;max-width:880px;aspect-ratio:16/9;border-radius:18px;overflow:hidden;background:#000;border:1px solid rgba(255,255,255,.10);box-shadow:0 30px 80px rgba(0,0,0,.45)}
-.video-frame iframe,.video-frame video,.video-frame #vslPlayer,.video-frame .vsl-yt{position:absolute;left:50%;bottom:0;transform:translateX(-50%);width:118%;height:118%;border:0;display:block}
+.video-frame iframe,.video-frame video,.video-frame #vslPlayer,.video-frame .vsl-yt{position:absolute;inset:0;width:100%;height:100%;border:0;display:block}
 .video-frame video{object-fit:cover}
 .video-frame .vsl-cover{position:absolute;inset:0;z-index:4;cursor:pointer;background:transparent}
 .video-frame .vsl-sound{position:absolute;z-index:5;right:14px;bottom:14px;display:inline-flex;align-items:center;gap:.45rem;font-family:var(--font-display);font-weight:600;font-size:.8rem;color:#fff;background:rgba(0,0,0,.55);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);border:1px solid rgba(255,255,255,.18);border-radius:8px;padding:.45rem .7rem;cursor:pointer;transition:background .2s ease}
@@ -1094,8 +1094,8 @@ END ANALYTICS -->
     loadYT(function(){
       player=new YT.Player('vslPlayer',{
         videoId:'-hzsAToOLQw',
-        playerVars:{autoplay:1,mute:1,controls:0,rel:0,playsinline:1,modestbranding:1,iv_load_policy:3,disablekb:1,fs:0,loop:0},
-        events:{ onReady:function(e){ try{e.target.mute();e.target.playVideo();}catch(_){} setIcon(); } }
+        playerVars:{autoplay:1,mute:1,controls:0,rel:0,playsinline:1,modestbranding:1,iv_load_policy:3,disablekb:1,fs:0,loop:1,playlist:'-hzsAToOLQw'},
+        events:{ onReady:function(e){ try{e.target.mute();e.target.playVideo();}catch(_){} setIcon(); }, onStateChange:function(e){ if(e.data===0){ try{e.target.seekTo(0,true);e.target.playVideo();}catch(_){} } } }
       });
     });
   }
